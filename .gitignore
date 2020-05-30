@@ -1,0 +1,13 @@
+node_modules/
+*.log
+/dist/
+/dist-lambda/
+/.nyc_output
+/coverage
+
+/tmp.js
+/tmp.ts
+/tmp
+/.tmp
+*.bundleinfo.json
+/.netlify/
