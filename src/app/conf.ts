@@ -5,3 +5,5 @@ export const enum StaticConf {
   KEY_NOTIFY_ON_START = 'notify_on_boss_start',
   KEY_SELECTED_TIMES = 'selected_times'
 }
+
+export const INITIAL_TITLE = document.title;

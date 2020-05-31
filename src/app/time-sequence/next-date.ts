@@ -8,7 +8,7 @@ import {NEXT_HOUR$} from './next-hour';
 
 const partialIsSame = {isSame: stubFalse};
 
-export const NEXT_DATE$: Observable<moment.Moment | null> = NEXT_HOUR$.pipe(
+export const NEXT_DATE_BF_ADJUST$: Observable<moment.Moment | null> = NEXT_HOUR$.pipe(
   map((hr): moment.Moment | null => {
     if (hr == null) {
       return null;
@@ -21,6 +21,10 @@ export const NEXT_DATE$: Observable<moment.Moment | null> = NEXT_HOUR$.pipe(
 
     return next;
   }),
+  shareReplay(1)
+);
+
+export const NEXT_DATE$: Observable<moment.Moment | null> = NEXT_DATE_BF_ADJUST$.pipe(
   switchMap(next => {
     if (!next) {
       return of(next);

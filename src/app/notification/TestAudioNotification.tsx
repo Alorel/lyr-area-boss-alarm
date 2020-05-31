@@ -5,6 +5,7 @@ import {useCallback, useEffect, useState} from 'preact/hooks';
 import {fromEvent, timer} from 'rxjs';
 import {filter, switchMapTo, take, takeUntil} from 'rxjs/operators';
 import {btn, btnPrimary} from '../../bs-partial.scss';
+import {useTitleUpdater} from '../title-updater';
 import {CLEAR_NOTIFY$} from '../util/CLEAR_NOTIFY';
 import {unsub} from '../util/unsub';
 import {audioNotification, useIsAudioPlaying} from './audioNotification';
@@ -79,6 +80,7 @@ export function TestAudioNotification(): VNode | null {
   const [initialised, setInitialised] = useState(false);
 
   useDocClick(initialised, setInitialised);
+  useTitleUpdater(initialised, playing);
   const onClick = useAudioCallback(initialised, setInitialised);
 
   return (

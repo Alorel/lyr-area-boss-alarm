@@ -107,7 +107,8 @@ export default {
     }),
     typescript(),
     replacePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      'process.env.PUBLIC_PATH': JSON.stringify(publicPath),
     }),
     commonjs({
       include: /node_modules[\\/]moment-timezone/,
