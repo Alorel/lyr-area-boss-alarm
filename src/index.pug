@@ -1,0 +1,14 @@
+doctype html
+html(lang='en')
+  head
+    base(href=self.base)
+    title= self.title || 'Lyr Boss Timer'
+    each url in self.cssFiles || []
+      link(rel='stylesheet', type='text/css', href=url)
+    link(rel='shortcut icon', href=`${self.base}favicon.ico`)
+    meta(name='viewport', content='width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes')
+  body
+    div#root!= self.prerendered || ''
+    script(type='application/javascript', src=`https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=${encodeURIComponent('default,es2015,es2016,es2017,es2018,es2019')}`)
+    each s in self.jsFiles || []
+      script&attributes(s.attributes)!= s.body || ''
