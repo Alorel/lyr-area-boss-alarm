@@ -26,5 +26,7 @@ yarn.lock text
 *.ico binary
 *.png binary
 *.gif binary
+*.mp3 binary
+*.wav binary
 *.gz binary
 *.tgz binary

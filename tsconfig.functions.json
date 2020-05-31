@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "target": "es2018",
+    "outDir": "./dist",
+    "module": "esnext"
+  },
+  "include": [
+    "declarations.d.ts",
+    "lambda"
+  ]
+}
