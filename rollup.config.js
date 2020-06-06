@@ -122,7 +122,7 @@ export default {
     }),
     url({
       include: /\.mp3$/,
-      limit: 0,
+      limit: Number.MAX_VALUE,
       publicPath,
       fileName: assetFileNames
     }),
